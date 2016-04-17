@@ -21,11 +21,10 @@ $password = $_POST['staffPass'];
 	$checkLogin = loginUser($email,$password, $pdo);
 	if ($checkLogin){
 		echo "testing";
-	
+
 	}
 	else{
 			echo "testing2";
-
 	}
 		die();	
 
