@@ -3,7 +3,7 @@ session_start();
 require('../database.php');
 
 function loginUser($email, $password, $pdo) {
-        $sth = $pdo->prepare('SELECT * FROM Customers WHERE email = ? AND password = ?');
+        $sth = $pdo->prepare('SELECT * FROM Staff WHERE email = ? AND password = ?');
       	$testVal = $sth->execute(array($email, $password)); 
 	    if($testVal)
             return true;
@@ -12,8 +12,8 @@ function loginUser($email, $password, $pdo) {
     }
 	
 	
-$email = $_POST['custEmailAdd'];
-$password = $_POST['custPass'];
+$email = $_POST['staffEmailAdd'];
+$password = $_POST['staffPass'];
 
 
 
@@ -29,4 +29,5 @@ $password = $_POST['custPass'];
 	}
 		die();	
 
+	
 ?>
