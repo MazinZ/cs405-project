@@ -2,13 +2,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Home</title>
+<title>Register</title>
 </head>
 
 <body>
+<h1> Register </h1>
 
 
-                <a href="./login">Login</a>
 
 </body>
 </html>
