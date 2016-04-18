@@ -29,7 +29,7 @@ $password = $_POST['custPass'];
 		$_SESSION["currUserName"]  = $row[0];
 		$_SESSION["userType"]  = 0;
 		$_SESSION["loggedIn"]  = true;
-		header("location:../shopping/index.php");
+		header("location:./index.php");
     	exit();
 
 	}
