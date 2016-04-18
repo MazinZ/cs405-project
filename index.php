@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!--<?php require('./database.php'); ?>-->
 <!doctype html>
 <html>
