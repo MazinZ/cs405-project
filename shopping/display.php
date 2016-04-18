@@ -9,12 +9,13 @@ function displayItems($conn)
 
 	echo '<tr>';
 		foreach ($allcartItemsQuery as $res ):
+			$addToCartItem = "addItemToCart.php?item_id=" .$res["item_id"];
+			echo '<td>' .$res['item_id']. '</td>';
 			echo '<td>' .$res['name']. '</td>' ;
 			echo '<td>' .$res['description']. '</td>' ;
 			echo '<td>' .$res['price']. '</td>' ;
 			echo '<td><a class\"addToCartLink\" href=\"#\"$addToCartItem\">Add Item to Cart</a></td>';
 			echo '<br>';
-
 		endforeach;
 	echo '</tr>';
 	
