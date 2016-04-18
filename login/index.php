@@ -3,12 +3,18 @@
 <!doctype html>
 <html>
 <head>
+    <?php  include_once "../templates/includes.php"; ?>
+
 <meta charset="UTF-8">
 <title>Login</title>
 </head>
 
 <body>
 	<h1> Customer Login </h1>
+    
+    <?php  include_once "../templates/topBar.php"; ?>
+
+    
 	<?php if (!isset($_SESSION["loggedIn"])) { 
 		if (isset($_SESSION["LoginError"]) && $_SESSION["LoginError"]  == true){
 			echo "Username or password incorrect ";

@@ -1,13 +1,9 @@
-<?php
-require('../database.php');
-?>
 
+<nav class="navbar navbar-light bg-faded">
+  <ul class="nav navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="../logout.php">Logout <span class="sr-only">(current)</span></a>
+    </li>
 
-
-<ul class="navbar navbar-default"  >
-	<li id="Login" ><a href="../login.php">Login</a></li>
-    <li id="Register"><a href="../about">ABOUT</a></li>
-    <li id="Shop"><a href="#faq">FAQ</a></li>
-    <li id="APPLY"><a href="#apply">APPLY</a></li>
-    <li id="SPONSORS" ><a href="#sponsors">SPONSORS</a></li>
-</ul>
+  </ul>
+  </nav>
