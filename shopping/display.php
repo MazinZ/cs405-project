@@ -14,9 +14,19 @@ function getCartCount($item_id, $email)
 }
 
 
-function displayItems($PStatment, $returnU, $USE_FLAG)
+function displayItems()
 {
+	$allcartItemsQuery = mysqli_query($conn, "SELECT * FROM Items");
 
+
+	echo '<tr>';
+		foreach ($allcartItemsQuery as $res ):
+			echo '<td>' .$res['name']. '</td>' ;
+			echo '<td>' .$res['description']. '</td>' ;
+			echo '<td>' .$res['price']. '</td>' ;
+
+		endforeach;
+	echo '</tr>';
 	
 
 }
