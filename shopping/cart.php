@@ -9,7 +9,7 @@
 
  	<?php
     	require("../database.php");
-    	include("./display.php");
+    	include("./displayCart.php");
 
 	$email = $_SESSION['currUserEmail'];
 
