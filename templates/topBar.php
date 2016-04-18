@@ -38,6 +38,16 @@ define("HTTP", ($_SERVER["SERVER_NAME"] == "localhost")
 
       <?php } ?>
       
+      <?php if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true && isset($_SESSION["userType"]) && $_SESSION["userType"] == 0){ ?>
+
+   		 <li class="nav-item active">
+
+     		 <a class="nav-link" href="<?php echo HTTP . "shopping/index.php"?>">Shop </a>
+         </li>
+
+      <?php } ?>
+      
+      
       
   </ul>
   </nav>
