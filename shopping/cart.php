@@ -11,11 +11,11 @@
     	require("../database.php");
     	include("./displayCart.php");
 
-	$email = $_SESSION['currUserEmail'];
+	
 
     ?>
     
-    <?php displayCart($conn, $email);?>
+    <?php displayCart($conn);?>
 
     
     

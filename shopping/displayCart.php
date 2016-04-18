@@ -3,11 +3,12 @@
  <?php
  	session_start();
 
-	require("removeItemFromCart.php");
+	$email = $_SESSION['currUserEmail'];
 
 	function displayCart($email)
 	{
 		
+		require("removeItemFromCart.php");
 		$cartQuery = mysqli_query($conn, "SELECT * FROM Cart C, Items I WHERE I.item_id = C.item_id AND C.email ='".$email."'");
 
 		echo '<tr>';
