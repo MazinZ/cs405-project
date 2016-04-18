@@ -2,22 +2,24 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Login</title>
+<title>Shopping</title>
 </head>
 
 <body>
 
- 	<form method="post" action="loginCustomer.php">
-                <label for="email">Email: </label>
-                <input type="text" name="custEmailAdd" id="custEmailAdd" />
-                <br>
-                <label for="password">Password: </label>
-                <input type="password" name="custPass" id="custPass" />
-                <br>
-                <button type="submit">Login</button>
-                <hr>
-                <a href="./register.php">Don't have an account?</a>
-    </form>
+ 	<?php
+        if(!isset($keyword))
+            echo "<h2>All items</h2>";
+        else
+            echo "<h2>Items realted to \"$keyword\"</h2>";
+
+
+        if(!isset($res))
+        {
+            
+        }
+    ?>
+
     
     
 </body>

@@ -17,7 +17,7 @@ function getCount($item_id, $email)
 
 function displayItems($PStatment, $returnU, $USE_FLAG)
 {
-    
+
 }
 
 ?>
