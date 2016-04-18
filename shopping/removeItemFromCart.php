@@ -9,7 +9,11 @@
 
 	$cartQuery = mysqli_query($conn,"DELETE FROM Cart WHERE cart_id ='".$cart_ID."'");
 
-	
+	if($cartQuery)
+	{
+		header("location:../shopping/cart.php");
+		exit();
+	}
 	
 
 ?>
