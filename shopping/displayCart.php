@@ -3,17 +3,19 @@
  <?php
  	session_start();
 
-	$email = $_SESSION['currUserEmail'];
+	
 
-	function displayCart($email)
+	function displayCart($conn)
 	{
-		
-		require("removeItemFromCart.php");
+		$email = $_SESSION['currUserEmail'];
+		//require("removeItemFromCart.php");
 		$cartQuery = mysqli_query($conn, "SELECT * FROM Cart C, Items I WHERE I.item_id = C.item_id AND C.email ='".$email."'");
+
+		
 
 		echo '<tr>';
 			foreach ($cartQuery as $res ):
-				$removeFromCartItem = "removeItemFromCart.php?item_id=" .$res["item_id"];
+				$removeFromCartItem = "removeItemFromCart.php?cart_id=" .$res["cart_id"];
 				echo '<td>' .$res['name']. '</td>' ;
 				echo '<td>' .$res['description']. '</td>' ;
 				echo '<td>' .$res['price']. '</td>' ;

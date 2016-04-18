@@ -8,6 +8,12 @@
 
 	$cartQuery = mysqli_query($conn,"INSERT INTO Cart(email,item_id) VALUES('$email','$item_ID')");
 
+	if($cartQuery)
+	{
+		header("location:../shopping/index.php");
+		exit();
+	}
+
 	
 
 ?>

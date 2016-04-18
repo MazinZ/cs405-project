@@ -3,13 +3,13 @@
 	require('../database.php');
 	session_start();
 	
-	$item_ID = $_GET['item_id'];
-	$email = $_SESSION['currUserEmail'];
+	$cart_ID = $_GET['cart_id'];
+	//$email = $_SESSION['currUserEmail'];
 
 
-	$cartQuery = mysqli_query($conn,"DELETE FROM Cart WHERE email ='".$email."' AND item_id ='".$item_ID."'");
+	$cartQuery = mysqli_query($conn,"DELETE FROM Cart WHERE cart_id ='".$cart_ID."'");
 
-
+	
 	
 
 ?>
