@@ -33,7 +33,7 @@ define("HTTP", ($_SERVER["SERVER_NAME"] == "localhost")
 
    		 <li class="nav-item active">
 
-     		 <a class="nav-link" href="<?php echo HTTP . "shopping/displayCart.php"?>">View Cart </a>
+     		 <a class="nav-link" href="<?php echo HTTP . "shopping/cart.php"?>">View Cart </a>
          </li>
 
       <?php } ?>
