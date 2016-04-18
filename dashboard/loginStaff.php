@@ -29,6 +29,6 @@ $password = $_POST['staffPass'];
 			echo "Username or password incorrect ";
 
 	}
-			die();	
+			exit();	
 
 ?>

@@ -9,6 +9,6 @@
 
 
                 <a href="./login">Login</a>
-
+				<a href="./logout.php">Logout</a>
 </body>
 </html>

@@ -1,3 +1,5 @@
+<?php require('../database.php'); ?>
+
 <!doctype html>
 <html>
 <head>
@@ -6,7 +8,13 @@
 </head>
 
 <body>
-
+	
+	<?php if (!isset($_SESSION["loggedIn"])) { 
+		if (isset($_SESSION["LoginError"]) && $_SESSION["LoginError"]  == true){
+			echo "Username or password incorrect ";
+			unset($_SESSION["LoginError"]);
+		}
+	?>
  	<form method="post" action="loginCustomer.php">
                 <label for="email">Email: </label>
                 <input type="text" name="custEmailAdd" id="custEmailAdd" />
@@ -18,7 +26,13 @@
                 <hr>
                 <a href="./register.php">Don't have an account?</a>
     </form>
+    <?php }  else {	
+	
+	if(isset($_SESSION["currUserEmail"])){	?>
     
+    <p> Logged in as <?php echo $_SESSION['currUserEmail']; ?> </p>
+	<?php  }}?>
+		
     
 </body>
 </html>
