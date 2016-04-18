@@ -15,7 +15,7 @@
 
     ?>
     
-    <?php displayCart($conn, $email); ?>
+    <?php displayItems($conn);?>
 
     
     
