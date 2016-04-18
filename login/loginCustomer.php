@@ -19,10 +19,13 @@ $password = $_POST['custPass'];
 	
 	$checkLogin = loginUser($email,$password, $conn);
 	if ($checkLogin){
+		$infoQuery = mysqli_query($conn, "SELECT name FROM Customers WHERE email ='".$email."'");
+		$row = mysqli_fetch_row($infoQuery);
+		
 		echo "Hello " .$email;
 		$_SESSION["currUserEmail"]  = $email;
-		//$_SESSION["currUserName"]  = $name;
-		$_SESSION["userType"]  = 1;
+		$_SESSION["currUserName"]  = $row[0];
+		$_SESSION["userType"]  = 0;
 		$_SESSION["loggedIn"]  = true;
 		header("location:./index.php");
     	exit();

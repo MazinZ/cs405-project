@@ -8,7 +8,7 @@
 </head>
 
 <body>
-	
+	<h1> Customer Login </h1>
 	<?php if (!isset($_SESSION["loggedIn"])) { 
 		if (isset($_SESSION["LoginError"]) && $_SESSION["LoginError"]  == true){
 			echo "Username or password incorrect ";
@@ -28,9 +28,9 @@
     </form>
     <?php }  else {	
 	
-	if(isset($_SESSION["currUserEmail"])){	?>
+	if(isset($_SESSION["currUserName"])){	?>
     
-    <p> Logged in as <?php echo $_SESSION['currUserEmail']; ?> </p>
+    <p> Logged in as <?php echo $_SESSION['currUserName']; ?> </p>
 	<?php  }}?>
 		
     
