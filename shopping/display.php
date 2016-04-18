@@ -25,14 +25,19 @@ function displayItems($conn)
 
 function displayCart($email)
 {
-	$cartItemsQuery = mysqli_query($conn, "SELECT * FROM Cart WHERE email ='".email."'");
+	require("removeItemFromCart.php");
+
+	//$cartItemsQuery = mysqli_query($conn, "SELECT item_id FROM Cart WHERE email='."$email".'");
+	$cartQuery = mysqli_query($conn, "SELECT item_id FROM Cart WHERE email ='".$email."'");
+
 
 	echo '<tr>';
-		foreach ($cartItemsQuery as $res ):
-			echo '<td>' .$res['name']. '</td>' ;
-			echo '<td>' .$res['description']. '</td>' ;
-			echo '<td>' .$res['price']. '</td>' ;
-			echo '<td><a class\"removeItemFromCartLink\" href=\"#\"$removeItem\">Remove Item</a></td>';
+		foreach ($cartQuery as $res ):
+			$removeFromCartItem = "removeItemFromCart.php?item_id=" .$res["item_id"];
+			echo '<td>' .$res['cart_id']. '</td>' ;
+			echo '<td>' .$res['email']. '</td>' ;
+			echo '<td>' .$res['item_id']. '</td>' ;
+			echo '<td><a href='.$removeFromCartItem.'>Remove Item</a></td>';
 			echo '<br>';
 		endforeach;
 	echo '</tr>';
