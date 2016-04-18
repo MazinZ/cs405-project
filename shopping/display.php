@@ -4,14 +4,7 @@ require('../database.php');
 
 
 
-function getCartCount($item_id, $email)
-{
-    $cartQuery = mysqli_query($conn, "SELECT COUNT(*) as count FROM Cart WHERE email ='".$email."'AND item_id = '".$item_id"'");
 
-    return mysqli_num_rows($cartQuery);
-
-
-}
 
 
 function displayItems()
