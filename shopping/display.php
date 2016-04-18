@@ -6,7 +6,6 @@ session_start();
 function displayItems($conn)
 {
 	require("addItemToCart.php");
-
 	$allcartItemsQuery = mysqli_query($conn, "SELECT * FROM Items");
 
 	echo '<tr>';
@@ -15,7 +14,7 @@ function displayItems($conn)
 			echo '<td>' .$res['name']. '</td>' ;
 			echo '<td>' .$res['description']. '</td>' ;
 			echo '<td>' .$res['price']. '</td>' ;
-			echo '<td><a href="addItemToCart.php">Add Item to Cart</a></td>';
+			echo '<td><a class\"addToCartLink\" href=\"#\"$addToCartItem\">Add Item to Cart</a></td>';
 			echo '<br>';
 		endforeach;
 	echo '</tr>';
