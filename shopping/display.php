@@ -1,23 +1,39 @@
 <?php
 
-session_start();
 require('../database.php');
 
 
 
-function getCount($item_id, $email)
+function getCartCount($item_id, $email)
 {
-    $res = $pdo->prepare('SELECT COUNT(*) as count FROM Carts WHERE item_id = ? AND password = ?');
-    $testVal = $res->execute(array($item_id, $email));
+    $cartQuery = mysqli_query($conn, "SELECT COUNT(*) as count FROM Cart WHERE email ='".$email."'AND item_id = '".$item_id"'");
 
-    $row = $res->fetch();
-    return $row['count'];
+    return mysqli_num_rows($cartQuery);
+
+
 }
 
 
 function displayItems($PStatment, $returnU, $USE_FLAG)
 {
 
+	
+
+}
+
+
+function displayCart($email)
+{
+	$cartItemsQuery = mysqli_query($conn, "SELECT * FROM Cart WHERE email ='".email."'");
+
+	echo '<tr>';
+		foreach ($cartItemsQuery as $res ):
+			echo '<td>' .$res['name']. '</td>' ;
+			echo '<td>' .$res['description']. '</td>' ;
+			echo '<td>' .$res['price']. '</td>' ;
+
+		endforeach;
+	echo '</tr>';
 }
 
 ?>
