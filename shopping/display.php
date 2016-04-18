@@ -12,6 +12,7 @@ function displayItems($conn)
 			echo '<td>' .$res['name']. '</td>' ;
 			echo '<td>' .$res['description']. '</td>' ;
 			echo '<td>' .$res['price']. '</td>' ;
+			echo '<br>';
 		endforeach;
 	echo '</tr>';
 	
