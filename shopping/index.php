@@ -8,10 +8,9 @@
 <body>
 
  	<?php
-    	require("display.php");
-    	require("../database.php");
+    	require_once("display.php");
 
-    	displayItems($conn);
+    	displayItems();
 
     ?>
 
