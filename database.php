@@ -13,5 +13,4 @@
 	} 
 
 	mysql_select_db('cs405');
-	
 ?>
