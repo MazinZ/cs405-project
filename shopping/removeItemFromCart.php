@@ -8,10 +8,9 @@
 
 
 	$cartQuery = mysqli_query($conn,"DELETE FROM Cart WHERE email ='".$email."' AND item_id ='".$item_ID."'");
-	if($cartQuery)
-	{
-		header("location:./displayCart.php");
-		exit();
-	}
+
+	header("location:./displayCart.php");
+	exit();
+	
 
 ?>
