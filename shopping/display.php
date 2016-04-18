@@ -12,7 +12,7 @@ function displayItems($conn)
 			echo '<td>' .$res['name']. '</td>' ;
 			echo '<td>' .$res['description']. '</td>' ;
 			echo '<td>' .$res['price']. '</td>' ;
-			echo '<td><a class\"removeItemFromCartLink\" href=\"#\"$removeItem\">Remove Item</a></td>';
+			echo '<td><a class\"addToCartLink\" href=\"#\"$addToCartItem\">Add Item to Cart</a></td>';
 			echo '<br>';
 
 		endforeach;
@@ -32,7 +32,7 @@ function displayCart($email)
 			echo '<td>' .$res['description']. '</td>' ;
 			echo '<td>' .$res['price']. '</td>' ;
 			echo '<td><a class\"removeItemFromCartLink\" href=\"#\"$removeItem\">Remove Item</a></td>';
-
+			echo '<br>';
 		endforeach;
 	echo '</tr>';
 }
