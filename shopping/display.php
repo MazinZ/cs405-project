@@ -7,8 +7,6 @@ function displayItems()
 {
 	$allcartItemsQuery = mysqli_query($conn, "SELECT * FROM Items");
 
-	$row = mysqli_fetch_row($allcartItemsQuery);
-
 	echo .$allcartItemsQuery;
 
 	//echo '<tr>';
