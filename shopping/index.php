@@ -9,7 +9,7 @@
 
  	<?php
     	require("display.php");
-    	require("../database.php")
+    	require("../database.php");
 
     	displayItems($conn);
 
