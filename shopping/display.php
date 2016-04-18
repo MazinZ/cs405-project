@@ -3,7 +3,7 @@
 require('../database.php');
 
 
-function displayItems($conn)
+function displayItems()
 {
 	$allcartItemsQuery = mysqli_query($conn, "SELECT * FROM Items");
 
