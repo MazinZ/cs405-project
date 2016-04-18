@@ -1,3 +1,4 @@
+<!--<?php require('./database.php'); ?>-->
 <!doctype html>
 <html>
 <head>
@@ -8,7 +9,12 @@
 <body>
 
 
-                <a href="./login">Login</a>
-				<a href="./logout.php">Logout</a>
+	<a href="./login">Login</a>
+	<a href="./logout.php">Logout</a>
+    <br>
+        <br>
+
+<!--<?php include_once "./shopping/itemList.php"; ?>-->
+               
 </body>
 </html>
