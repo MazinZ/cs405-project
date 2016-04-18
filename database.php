@@ -13,5 +13,6 @@
 	} 
 
 	mysql_select_db('cs405');
+session_start();
 
 ?>

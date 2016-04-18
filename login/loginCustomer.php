@@ -1,5 +1,4 @@
 <?php
-session_start();
 require('../database.php');
 
 function loginUser($email, $password, $conn) {
@@ -24,11 +23,11 @@ $password = $_POST['custPass'];
 	
 	$checkLogin = loginUser($email,$password, $conn);
 	if ($checkLogin){
-		echo "testing";
+		echo "Hello " .$email;
 
 	}
 	else{
-			echo "testing2";
+			echo "Username or password incorrect ";
 
 	}
 			die();	
