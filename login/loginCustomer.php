@@ -1,5 +1,7 @@
 <?php
 require('../database.php');
+session_start();
+
 
 function loginUser($email, $password, $conn) {
         
