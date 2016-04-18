@@ -8,16 +8,10 @@
 <body>
 
  	<?php
-        if(!isset($keyword))
-            echo "<h2>All items</h2>";
-        else
-            echo "<h2>Items realted to \"$keyword\"</h2>";
+    	require("display.php");
 
+    	displayItems();
 
-        if(!isset($res))
-        {
-            
-        }
     ?>
 
     
