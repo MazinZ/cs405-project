@@ -9,7 +9,7 @@
 	//}
 
 
-	
+	$item_ID = $_GET['item_id'];
 	echo $item_ID;
 
 
