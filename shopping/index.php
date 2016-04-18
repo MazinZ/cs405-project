@@ -9,8 +9,9 @@
 
  	<?php
     	require("display.php");
+    	require("../database.php")
 
-    	displayItems();
+    	displayItems($conn);
 
     ?>
 
