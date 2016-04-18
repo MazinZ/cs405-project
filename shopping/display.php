@@ -9,7 +9,7 @@ function displayItems()
 
 	$row = mysqli_fetch_row($allcartItemsQuery);
 
-	echo .$row;
+	echo .$allcartItemsQuery;
 
 	//echo '<tr>';
 	//	foreach ($allcartItemsQuery as $res ):
