@@ -101,7 +101,6 @@
     $getOrders = mysqli_query($conn, "SELECT order_id FROM Orders WHERE order_date >= DATE_SUB( CURDATE(), INTERVAL 1 YEAR)");
 
     foreach ($getOrders as $row): 
-        //echo '<td>' .$row['order_id']. '</td>' ;
         $orderID = $row['order_id'];
 
         $itemsQuery = mysqli_query($conn, "SELECT I.item_id, I.name, COUNT(IO.item_id) as ct FROM Items I, ItemOrders IO

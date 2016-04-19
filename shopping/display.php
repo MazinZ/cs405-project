@@ -1,9 +1,8 @@
 <?php
 
-
 function displayItems($conn)
 {
-	require("addItemToCart.php");
+	//require("addItemToCart.php");
 	$allcartItemsQuery = mysqli_query($conn, "SELECT * FROM Items");
 
 	echo '<tr>';
@@ -16,11 +15,7 @@ function displayItems($conn)
 			echo '<br>';
 		endforeach;
 	echo '</tr>';
-	
 
 }
-
-
-
 
 ?>
