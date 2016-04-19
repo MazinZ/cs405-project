@@ -49,7 +49,7 @@
         $orderID = $row['order_id'];
 
         $itemsQuery = mysqli_query($conn, "SELECT I.item_id, I.name, COUNT(IO.item_id) as ct FROM Items I, ItemOrders IO
-                      WHERE IO.item_id = '".$orderID."' AND I.item_id = IO.item_id");
+                      WHERE IO.item_id = '".$orderID."' AND I.item_id = IO.item_id GROUP BY I.item_id");
 
         $itemCount =  $itemsQuery->fetch_object()->ct;
 
