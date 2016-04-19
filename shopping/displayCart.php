@@ -1,17 +1,10 @@
-
-
  <?php
- 	session_start();
-
-	
-
+ 	
 	function displayCart($conn)
 	{
 		$email = $_SESSION['currUserEmail'];
 		//require("removeItemFromCart.php");
 		$cartQuery = mysqli_query($conn, "SELECT * FROM Cart C, Items I WHERE I.item_id = C.item_id AND C.email ='".$email."'");
-
-		
 
 		echo '<tr>';
 			foreach ($cartQuery as $res ):
@@ -24,9 +17,6 @@
 			endforeach;
 		echo '</tr>';
 	}
-
-
-
 ?>
 
     

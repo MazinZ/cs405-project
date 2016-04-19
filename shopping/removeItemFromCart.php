@@ -1,7 +1,7 @@
 <?php
 	
 	require('../database.php');
-	session_start();
+	//session_start();
 	
 	$cart_ID = $_GET['cart_id'];
 	//$email = $_SESSION['currUserEmail'];
