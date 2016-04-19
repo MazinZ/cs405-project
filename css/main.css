@@ -4,8 +4,8 @@ h1 {
 	color:#000;
 	letter-spacing:1px;
 	font-size:24px;
-	    text-transform: uppercase;
-
+	    /*text-transform: uppercase;
+*/
 		text-align:center;
 
 	
@@ -71,15 +71,52 @@ li {
 	height:250px; /*461*/
 	margin-top: -125px; /*set to a negative number 1/2 of your height*/
 	margin-left: -175px;
-	background-color:#25272a;
+	background-color:#fff;
 	padding:20px;
 	text-align:center;
 	font-family:"Montserrat";
 	font-weight:100 !important;
-	
+	font-size:12px;
 		
 }
 
 .centerBox a {
 	color:#3a5063;
+}
+
+input[type="text"],
+input[type="password"]{
+  background:#EAE6E1;
+  border:0;
+  font-weight:bold;
+  padding:10px;
+  border-radius:3px;
+  width:100%;
+  margin:5px 0;
+  outline:medium none;
+  color:#838383;
+}
+
+
+button{
+	margin-top:20px;
+  display:block;
+  padding:10px;
+  background:#50BFA4;
+  border:0;
+  border-radius:3px;
+  font-weight:bold;
+  width:100%;
+  color:#fff;
+  cursor:pointer;
+  -webkit-transition:all 0.3s;
+  -moz-transition:all 0.3s;
+  transition:all 0.3s;
+}
+button:hover{
+  background:#58CCB0;
+}
+
+nav {
+background-color:#fff;	
 }

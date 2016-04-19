@@ -12,12 +12,12 @@ session_start();
 <title>Login</title>
 
 <style> 
-	body{background-color:#17181a;}
+	body{background-color:#e0e0e0;}
 </style>
 </head>
 
 <body>
-	<h1> Customer Login </h1>
+<div class="container">
     
     <?php  include_once "../templates/topBar.php"; ?>
 
@@ -29,12 +29,14 @@ session_start();
 		}
 	?>
     <div class = "centerBox"> 
+    	<!--<h1> Login </h1>-->
+
  	<form method="post" action="loginCustomer.php">
-                <label for="email">Email: </label><br>
-                <input type="text" name="custEmailAdd" id="custEmailAdd" />
+                <!--<label for="email">Email: </label>-->
+                <input type="text" placeholder="Email" name="custEmailAdd" id="custEmailAdd" />
                 <br>
-                <label for="password">Password: </label><br>
-                <input type="password" name="custPass" id="custPass" />
+                <!--<label for="password">Password: </label>-->
+                <input type="password" placeholder="Password" name="custPass" id="custPass" />
                 <br>
                 <button type="submit">Login</button>
                 <hr>
@@ -48,6 +50,6 @@ session_start();
     <p> Logged in as <?php echo $_SESSION['currUserName']; ?> </p>
 	<?php  }}?>
 		
-    
+    </div>
 </body>
 </html>

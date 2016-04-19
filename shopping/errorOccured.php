@@ -3,6 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Error Occured</title>
+    <?php  include_once "../templates/includes.php"; ?>
+
 </head>
 
 <body>
