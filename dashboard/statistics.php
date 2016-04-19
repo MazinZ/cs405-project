@@ -13,7 +13,20 @@
 <body>
 
 <h1> Sales Statistics </h1>
-    <?php  include_once "../templates/topBar.php"; ?>
+    <?php  include_once "../templates/topBar.php"; 
+
+    $itemsQuery = mysqli_query($conn, "SELECT item_id FROM Items");
+
+    foreach ($itemsQuery as $row ): 
+      $itemID = $row['item_id'];
+      $statQuery = mysqli_query($conn, "SELECT COUNT(*) as cnt FROM ItemOrders  WHERE item_id ='".$itemID."'");
+
+      $itemCount =  $statQuery->fetch_object()->cnt;
+      echo "item: "; 
+      echo $itemCount; 
+
+    endforeach;
+    ?>
 
 <ul class="nav nav-tabs">
   <li class="active"><a data-toggle="tab" href="#home">Week</a></li>
