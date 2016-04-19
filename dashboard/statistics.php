@@ -67,10 +67,15 @@
         $itemsQuery = mysqli_query($conn, "SELECT I.item_id, I.name, COUNT(IO.item_id) as ct FROM Items I, ItemOrders IO
                       WHERE IO.item_id = '".$orderID."' AND I.item_id = IO.item_id");
 
+        $itemCount =  $itemsQuery->fetch_object()->ct;
+
         foreach ($itemsQuery as $res):
+          
           echo '<td>' .$res['name']. '</td>' ;
+
           echo '<td>' .$res['item_id']. '</td>' ;
-          //echo '<td>' .$res->fetch_object()->ct. '</td>';
+          echo '<td>' .$itemCount. '</td>';
+          echo '<br>';
         endforeach;
 
     endforeach;
