@@ -11,7 +11,6 @@
 
 	$orderCon = mysqli_query($conn, "INSERT INTO Orders(status, order_date, ship_date) VALUES (0, NOW(), NULL)");
 
-
 	$cartCount = mysqli_query($conn, "SELECT COUNT(*) as cnt FROM Cart WHERE email ='".$email."'");
 	$numItems = $cartCount->fetch_object()->cnt;
 
