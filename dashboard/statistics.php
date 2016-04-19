@@ -46,21 +46,28 @@
 
     //$itemsQuery = mysqli_query($conn, "SELECT item_id, name FROM Items");
 
-    $itemsQuery = mysqli_query($conn, "SELECT I.item_id, I.name FROM Items I, Orders O, ItemOrders IO WHERE O.order_id = IO.order_id AND O.order_date BETWEEN ADDDATE(NOW(),-7) and NOW() ");
+    $dateAdd = 
+
+    $itemsQuery = mysqli_query($conn, "SELECT IO.item_id, COUNT(IO.item_id) as ct, I.name 
+                  FROM Items I, ItemOrders IO, Orders O 
+                  WHERE I.item_id = IO.item_id AND O.order_id = IO.order_id AND O.order_date BETWEEN NOW() - INTERVAL ");
     echo mysqli_error($conn); 
 
+
+
     foreach ($itemsQuery as $row): 
-      $itemID = $row['item_id'];
+        //$itemID = $row['item_id'];
       //$statQuery = mysqli_query($conn, "SELECT COUNT(*) as cnt FROM ItemOrders  WHERE item_id ='".$itemID."'");
 
-      //$itemCount =  $statQuery->fetch_object()->cnt;
+        //$itemCount =  $row->fetch_object()->ct;
         echo '<td>' .$row['name']. '</td>' ;
         echo '<br>';
         echo '<td>' .$row['item_id']. '</td>' ;
         echo '<br>';
-        //echo '<td>' .$itemCount. '</td>' ;
+        echo '<td>' .$ct. '</td>' ;
         echo '<br>'; 
     endforeach;
+
         
   
     
