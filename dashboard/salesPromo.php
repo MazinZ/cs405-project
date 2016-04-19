@@ -1,3 +1,6 @@
+<?php require('../database.php');  
+	session_start();
+?>
 <!doctype html>
 <html>
 <head>
@@ -7,9 +10,7 @@
 
 </head>
 <body>
-<?php require('../database.php');  
-	session_start();
-?>
+
 <h1> Add Promotion </h1>
     
     <?php  include_once "../templates/topBar.php"; ?>
