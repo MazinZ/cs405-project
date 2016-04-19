@@ -1,13 +1,14 @@
 h1 {
 	
 	font-family:"Montserrat";
-	color:#000;
+	color:#666666;
 	letter-spacing:1px;
-	font-size:24px;
+	font-size:16px;
 	    /*text-transform: uppercase;
 */
 		text-align:center;
 
+	margin-top:10px;
 	
 }
 
@@ -25,15 +26,16 @@ li {
 }
 .navbar {
 		line-height:14px !important;
+		padding:10px;
 
 }
 .navbar li a {
   position: relative;
   text-decoration: none;
   color:#a8a8a8 !important;
-  opacity:1;
   transition: all 0.5s;
   vertical-align:center;
+  
 
 }
 
@@ -42,10 +44,10 @@ li {
   content: "";
   position: absolute;
   width: 100%;
-  height: 4px;
+  height: 3px;
   bottom: 0;
   left: 0;
-  background-color: #425965;
+  background-color: #50BFA4;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -63,8 +65,12 @@ li {
 }
 
 .navbar li a:hover{
-	opacity:.5;
- 	color:#264d5d !important;
+	opacity:1;
+ 	color:#a8a8a8 !important;
+}
+
+.nav>li>a:focus, .nav>li>a:hover{ 
+background-color:#fff;
 }
 
 .centerBox {
@@ -72,8 +78,8 @@ li {
 	top: 50%;
 	left: 50%;
 	width:350px;
-	height:250px; /*461*/
-	margin-top: -125px; /*set to a negative number 1/2 of your height*/
+	height:300px; /*461*/
+	margin-top: -150px; /*set to a negative number 1/2 of your height*/
 	margin-left: -175px;
 	background-color:#fff;
 	padding:20px;

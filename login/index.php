@@ -18,7 +18,6 @@ session_start();
 
 <body>
 <div class="container">
-    
     <?php  include_once "../templates/topBar.php"; ?>
 
     
@@ -28,8 +27,8 @@ session_start();
 			unset($_SESSION["LoginError"]);
 		}
 	?>
-    <div class = "centerBox"> 
-    	<!--<h1> Login </h1>-->
+    <div class = "centerBox animated fadeIn"> 
+    	<h1> Login </h1>
 
  	<form method="post" action="loginCustomer.php">
                 <!--<label for="email">Email: </label>-->

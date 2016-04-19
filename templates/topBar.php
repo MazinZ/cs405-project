@@ -1,3 +1,8 @@
+<style> 
+	body{background-color:#e0e0e0;}
+</style>
+
+
 <nav class="navbar navbar-light bg-faded">
   <ul class="nav navbar-nav">
       <?php if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true){ ?>

@@ -17,4 +17,4 @@ define("HTTP", ($_SERVER["SERVER_NAME"] == "localhost")
       <link href="http://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css" rel="stylesheet">
 <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
 <link href='<?php echo HTTP ."css/main.css" ?>' rel='stylesheet' type='text/css'>
-
+ <link href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.1/animate.min.css" rel="stylesheet">

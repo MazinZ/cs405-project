@@ -10,7 +10,10 @@
 </head>
 
 <body>
-	<h1> Home </h1>
+<div class="container">
+
+	<!--<h1> Home </h1>-->
+    
     <?php  include_once "./templates/topBar.php"; ?>
 
 	<!--<a href="./login">Login</a>
@@ -19,6 +22,8 @@
         <br>
 
 <!--<?php include_once "./shopping/itemList.php"; ?>-->
+
+</div>
                
 </body>
 </html>
