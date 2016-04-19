@@ -13,9 +13,9 @@
                 mysqli_stmt_execute($stmt2);
                 mysqli_stmt_bind_result($stmt2, $item_ID);
                 
-                while(mysqli_stmt_fetch($stmt2)){
-                    mysqli_query($conn, "UPDATE Items SET stock = (stock - 1) WHERE item_id ='".$item_ID."'");
-                }
+                //while(mysqli_stmt_fetch($stmt2)){
+                //    mysqli_query($conn, "UPDATE Items SET stock = (stock - 1) WHERE item_id ='".$item_ID."'");
+                //}
                 // if(!mysqli_stmt_fetch($stmt2)){
                 //     header("HTTP/1.1 500 Internal Server Error");
                 //     die("Failed to ship order.");
