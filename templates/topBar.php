@@ -1,12 +1,3 @@
-<?php //include_once("../config.php"); 
-define("ROOT", __DIR__ ."/");
-define("HTTP", ($_SERVER["SERVER_NAME"] == "localhost")
-   ? "/cs405-project/"
-   : "http://testsite.com/"
-);
-
-
-?>
 <nav class="navbar navbar-light bg-faded">
   <ul class="nav navbar-nav">
       <?php if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true){ ?>

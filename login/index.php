@@ -10,6 +10,10 @@ session_start();
 
 <meta charset="UTF-8">
 <title>Login</title>
+
+<style> 
+	body{background-color:#c1c1c1;}
+</style>
 </head>
 
 <body>
@@ -24,17 +28,19 @@ session_start();
 			unset($_SESSION["LoginError"]);
 		}
 	?>
+    <div class = "centerBox"> 
  	<form method="post" action="loginCustomer.php">
-                <label for="email">Email: </label>
+                <label for="email">Email: </label><br>
                 <input type="text" name="custEmailAdd" id="custEmailAdd" />
                 <br>
-                <label for="password">Password: </label>
+                <label for="password">Password: </label><br>
                 <input type="password" name="custPass" id="custPass" />
                 <br>
                 <button type="submit">Login</button>
                 <hr>
                 <a href="./register.php">Don't have an account?</a>
     </form>
+    </div>
     <?php }  else {	
 	
 	if(isset($_SESSION["currUserName"])){	?>
