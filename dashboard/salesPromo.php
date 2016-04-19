@@ -11,9 +11,14 @@
 	session_start();
 ?>
 <h1> Add Promotion </h1>
+    
+    <?php  include_once "../templates/topBar.php"; ?>
 
-
-
+	<?php if (isset($_SESSION["InsertSuccess"])) { ?>
+		<div class="alert alert-success">
+  			<strong>Success!</strong> New promotion added.
+		</div>
+	<?php } ?>
  	<form method="post" action="processPromo.php">
     <select name="itemList">
 
