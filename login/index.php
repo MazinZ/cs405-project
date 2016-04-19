@@ -12,7 +12,7 @@ session_start();
 <title>Login</title>
 
 <style> 
-	body{background-color:#c1c1c1;}
+	body{background-color:#17181a;}
 </style>
 </head>
 
