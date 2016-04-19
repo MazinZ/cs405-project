@@ -1,5 +1,9 @@
 <?php require('../database.php');  
 	session_start();
+	/*if (!isset ($_SESSION['loggedIn']) || $_SESSION["userType"] != 2){
+		header("location:./index.php");
+		exit();	
+	}*/
 ?>
 <!doctype html>
 <html>

@@ -1,6 +1,10 @@
 <?php 	require('../database.php'); 
 session_start();
-
+	
+	if (!isset ($_SESSION['loggedIn']) || $_SESSION["userType"] == 0){
+		header("location:./index.php");
+		exit();	
+	}
 ?>
 <!doctype html>
 <html>
