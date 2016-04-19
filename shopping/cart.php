@@ -21,7 +21,7 @@ session_start();
     
     <?php displayCart($conn);?>
 
-    <a href="<?php echo HTTP . "../shopping/purchase.php"?>">Purchase</a>
+    <a href="<?php echo HTTP . "shopping/purchase.php"?>">Purchase</a>
 
     
     
