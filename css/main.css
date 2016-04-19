@@ -20,16 +20,20 @@ li {
 	
 	font-family:"Montserrat";
 	color:#464646;
-	font-size:16px;
+	font-size:14px;
 	
 }
+.navbar {
+		line-height:14px !important;
 
+}
 .navbar li a {
   position: relative;
   text-decoration: none;
   color:#a8a8a8 !important;
   opacity:1;
   transition: all 0.5s;
+  vertical-align:center;
 
 }
 
@@ -81,7 +85,7 @@ li {
 }
 
 .centerBox a {
-	color:#3a5063;
+	color:#8d8d8d;
 }
 
 input[type="text"],
@@ -116,7 +120,10 @@ button{
 button:hover{
   background:#58CCB0;
 }
-
+btn{
+	margin-top:0px !important;	
+}
 nav {
+
 background-color:#fff;	
 }
