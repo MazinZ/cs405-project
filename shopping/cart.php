@@ -12,8 +12,10 @@ session_start();
 
 <body>
 
-	<h1>Cart</h1>
+    <div class = "container">
 	<?php  include_once "../templates/topBar.php"; ?>
+    	<h1 style="text-align:left;">Cart</h1>
+
  	<?php
     	require("../database.php");
     	include("./displayCart.php");
@@ -22,8 +24,10 @@ session_start();
     <?php displayCart($conn);?>
 
     <a href="<?php echo HTTP . "shopping/purchase.php"?>">Purchase</a>
-
+	
     
     
+    
+    </div>
 </body>
 </html>

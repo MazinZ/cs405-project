@@ -11,10 +11,25 @@ h1 {
 	margin-top:10px;
 	
 }
+[contenteditable="true"]{
+	background-color:#fff;
+	font-size:20px;
+	margin-left:10px;
+	
+}
+.update table{
+font-size:20px;	
+}
+td{
+	padding:10px;
+	
+}
 
 html, body {
 	height:100%;
 	margin:0;
+		/*font-family:"Montserrat";*/
+
 }
 
 li {

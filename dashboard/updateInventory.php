@@ -9,6 +9,8 @@ session_start();
 <!doctype html>
 <html>
 <head>
+
+
 <meta charset="UTF-8">
 <title>Update Inventory</title>
     <?php  include_once "../templates/includes.php"; ?>
@@ -26,33 +28,36 @@ session_start();
 </head>
 
 <body>
-
+<div class="container" >
+    <?php  include_once "../templates/topBar.php"; ?>
+	
    <?php 
 	$query="SELECT item_id, name, description, price, stock FROM Items";
 	$results = mysqli_query($conn, $query);
 
 
 	?>
-    
+    <div class="update">
     <?php foreach($results as $res) :?>
    <table id="_editable_table">
 
     	<tr id="<?php echo $res['item_id'] ?>">
 		
-        	<td> <?php echo $res['name'];?></td><br>
-            <td> <?php echo $res['description'];?></td><br>
-            <td> <?php echo $res['price'];?></td><br>
+        	<td> <?php echo $res['name'] . '    	 ';?></td>
+            <!--<td> <?php echo $res['description'];?></td>-->
+            <!--<td> <?php echo $res['price'];?></td>-->
          	<td class="editable-col" contenteditable="true" col-index='0'> <?php echo $res['stock'];?></td>
        
       	</tr>
    </table>
         <br><br>
     <?php endforeach;?>
+    </div>
 
         
 
     
-   <button type="submit">Update</button>
+  <!-- <button type="submit">Update</button>-->
 
     
     <?php 
@@ -89,7 +94,7 @@ session_start();
   
   
   // send data as json format
-  echo json_encode($msg);
+  //echo json_encode($msg);
 	
 	
 	
@@ -137,5 +142,7 @@ $(document).ready(function(){
 });
 
 </script>
+</div>
 </body>
+
 </html>

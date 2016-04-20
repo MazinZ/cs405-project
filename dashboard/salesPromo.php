@@ -15,8 +15,8 @@
 </head>
 <body>
 
-<h1> Add Promotion </h1>
     
+<div class="container">
     <?php  include_once "../templates/topBar.php"; ?>
 
 	<?php if (isset($_SESSION["InsertSuccess"])) { ?>
@@ -24,6 +24,10 @@
   			<strong>Success!</strong> New promotion added.
 		</div>
 	<?php } ?>
+    
+                <div class = "centerBox animated fadeIn" style="height:250px;"> 
+<h1> Add Promotion </h1>
+	
  	<form method="post" action="processPromo.php">
     <select name="itemList">
 
@@ -37,8 +41,8 @@
 	?>
     </select>
 
-                <label for="discount">Discount percentage: </label>
-                <input type="text" name="discount" id="discount" />
+                <!--<label for="discount">Discount percentage: </label>-->
+                <input type="text" placeholder="Discount percentage" name="discount" id="discount" />
                 <br>
                 <label for="endDate">End date: </label>
                 <input type="date" name="endDate" id="endDate" />
@@ -48,6 +52,8 @@
                 <button type="submit">Add promotion</button>
 
     </form>
-
+    
+    </div>
+</div>
 </body>
 </html>

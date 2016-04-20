@@ -43,6 +43,32 @@
 
       <?php } ?>
       
+       <?php if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true && isset($_SESSION["userType"]) && $_SESSION["userType"] >0){ ?>
+       <li class="nav-item active">
+
+     		 <a class="nav-link" href="<?php echo HTTP . "dashboard/updateInventory.php"?>">Update Inventory </a>
+         </li>
+      
+      
+      <?php } ?>
+      
+       <?php if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true && isset($_SESSION["userType"]) && $_SESSION["userType"] ==2){ ?>
+       <li class="nav-item active">
+
+     		 <a class="nav-link" href="<?php echo HTTP . "dashboard/salesPromo.php"?>">Add Promotion </a>
+         </li>
+      
+      
+      <?php } ?>
+      
+       <?php if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true && isset($_SESSION["userType"]) && $_SESSION["userType"] == 0){ ?>
+       <li class="nav-item active">
+
+     		 <a class="nav-link" href="<?php echo HTTP . "dashboard/viewOrders.php"?>">View Orders </a>
+         </li>
+      
+      
+      <?php } ?>
       
       
   </ul>
