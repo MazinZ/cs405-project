@@ -70,6 +70,17 @@
       
       <?php } ?>
       
+      <?php if (isset($_SESSION["loggedIn"]) && $_SESSION["loggedIn"] == true && isset($_SESSION["userType"]) && $_SESSION["userType"] > 0){ ?>
+       <li class="nav-item active">
+
+     		 <a class="nav-link" href="<?php echo HTTP . "dashboard/ViewPendingOrders.php"?>">View Orders </a>
+         </li>
+      
+      
+      <?php } ?>
+      
+      
+      
       
   </ul>
   <div class="col-sm-3 col-md-3 pull-right">

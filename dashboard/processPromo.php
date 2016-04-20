@@ -7,7 +7,7 @@
 	$endDate = $_POST['endDate'];
 	$currItem = $_POST['itemList'];
 	
-	$startDate = date("m/d/Y");
+	$startDate = date("Y/m/d");
 	 mysqli_query($conn,"INSERT INTO Promotions(discount,start,end) VALUES('$discount','$startDate','$endDate')");
 
 	$promoIDQuery = mysqli_query($conn, "SELECT COUNT(DISTINCT promotion_id) as id FROM Promotions");

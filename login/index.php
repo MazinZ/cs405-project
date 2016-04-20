@@ -26,7 +26,20 @@ session_start();
 			echo "Username or password incorrect ";
 			unset($_SESSION["LoginError"]);
 		}
+		
+	
+	
 	?>
+    <?php if(isset($_SESSION["newRegister"])){  ?>
+    
+    
+
+    <div class="alert alert-success">
+  <strong>Registration successful.</strong> Please login below
+</div>
+    
+    <?php unset($_SESSION["newRegister"]);} ?>
+    
     <div class = "centerBox animated fadeIn"> 
     	<h1> Login </h1>
 

@@ -28,11 +28,18 @@ $authQuery = mysqli_query($conn, "SELECT * FROM Customers WHERE email ='".$email
 		}
         else{
 			
-			if(registerUser($conn, $email, $password, $name, $address))
-				echo "New user registered";
-			else
+			if(registerUser($conn, $email, $password, $name, $address)){
+				//echo "New user registered";
+				$_SESSION["newRegister"]  = true;
+
+				header("location:./index.php");
+				exit();
+			}
+			else{
 				echo "Error";
+				}
 		}
+		
 		
 		
 ?>
