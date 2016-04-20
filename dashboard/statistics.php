@@ -18,6 +18,7 @@
 </head>
 
 <body>
+<div class="container">
 
 <h1> Sales Statistics </h1>
     <?php  include_once "../templates/topBar.php"; 
@@ -38,65 +39,52 @@
 
 <div class="tab-content">
   <div id="home" class="tab-pane fade in active">
-    <h3>Week</h3>
+    <h3>Past Week</h3>
     <?php  include_once "../templates/topBar.php"; 
 
     $period = 'week';
-    $getOrders = mysqli_query($conn, "SELECT order_id FROM Orders WHERE order_date >= DATE_SUB( CURDATE(), INTERVAL 1 WEEK)");
+    
+        $itemsQuery = mysqli_query($conn, "SELECT IO.item_id,  I.name, COUNT(IO.item_id) as cnt
+                      FROM Items I, ItemOrders IO, Orders O
+                      WHERE O.order_id = IO.order_id AND  I.item_id = IO.item_id AND
+                      O.order_date BETWEEN NOW() - INTERVAL 1 WEEK AND NOW() GROUP BY IO.item_id");
 
-    foreach ($getOrders as $row): 
-        //echo '<td>' .$row['order_id']. '</td>' ;
-        $orderID = $row['order_id'];
 
-        $itemsQuery = mysqli_query($conn, "SELECT I.item_id, I.name, COUNT(IO.item_id) as ct FROM Items I, ItemOrders IO
-                      WHERE IO.item_id = '".$orderID."' AND I.item_id = IO.item_id GROUP BY I.item_id");
-
-        $itemCount =  $itemsQuery->fetch_object()->ct;
-
-        foreach ($itemsQuery as $res):         
-          echo '<td>' .$res['name']. '</td>' ;
-          echo '<td>' .$res['item_id']. '</td>' ;
-          echo '<td>' .$itemCount. '</td>';
+        foreach ($itemsQuery as $res):    
+          echo '<td>' .$res['name']. ' </td>' ;
+          echo '<td>' .$res['cnt']. ' </td>';
           echo '<br>';
         endforeach;
 
-    endforeach;
     
     ?>
     <p></p>
   </div>
   <div id="menu1" class="tab-pane fade">
-    <h3>Month</h3>
-    <?php  include_once "../templates/topBar.php"; 
+    <h3>Past Month</h3>
+  <?php  
 
-    $period = 'month';
-    $getOrders = mysqli_query($conn, "SELECT order_id FROM Orders WHERE order_date >= DATE_SUB( CURDATE(), INTERVAL 1 MONTH)");
+    $period = 'week';
+    
+        $itemsQuery = mysqli_query($conn, "SELECT IO.item_id,  I.name, COUNT(IO.item_id) as cnt
+                      FROM Items I, ItemOrders IO, Orders O
+                      WHERE O.order_id = IO.order_id AND  I.item_id = IO.item_id AND
+                      O.order_date BETWEEN NOW() - INTERVAL 1 MONTH AND NOW() GROUP BY IO.item_id");
 
-    foreach ($getOrders as $row): 
-        //echo '<td>' .$row['order_id']. '</td>' ;
-        $orderID = $row['order_id'];
 
-        $itemsQuery = mysqli_query($conn, "SELECT I.item_id, I.name, COUNT(IO.item_id) as ct FROM Items I, ItemOrders IO
-                      WHERE IO.item_id = '".$orderID."' AND I.item_id = IO.item_id");
-
-        $itemCount =  $itemsQuery->fetch_object()->ct;
-
-        foreach ($itemsQuery as $res):         
-          echo '<td>' .$res['name']. '</td>' ;
-          echo '<td>' .$res['item_id']. '</td>' ;
-          echo '<td>' .$itemCount. '</td>';
+        foreach ($itemsQuery as $res):    
+          echo '<td>' .$res['name']. ' </td>' ;
+          echo '<td>' .$res['cnt']. ' </td>';
           echo '<br>';
         endforeach;
 
-    endforeach;
     
     ?>
-    <p>Some content in menu 1.</p>
   </div>
   <div id="menu2" class="tab-pane fade">
-    <h3>Year</h3>
-    <?php  include_once "../templates/topBar.php"; 
-
+    <h3>Past Year</h3>
+    <?php  
+/*
     $period = 'year';
     $getOrders = mysqli_query($conn, "SELECT order_id FROM Orders WHERE order_date >= DATE_SUB( CURDATE(), INTERVAL 1 YEAR)");
 
@@ -116,11 +104,29 @@
         endforeach;
 
     endforeach;
+    */
+	
+	 
+
+    $period = 'week';
+    
+        $itemsQuery = mysqli_query($conn, "SELECT IO.item_id,  I.name, COUNT(IO.item_id) as cnt
+                      FROM Items I, ItemOrders IO, Orders O
+                      WHERE O.order_id = IO.order_id AND  I.item_id = IO.item_id AND
+                      O.order_date BETWEEN NOW() - INTERVAL 1 YEAR AND NOW() GROUP BY IO.item_id");
+
+
+        foreach ($itemsQuery as $res):    
+          echo '<td>' .$res['name']. ' </td>' ;
+          echo '<td>' .$res['cnt']. ' </td>';
+          echo '<br>';
+        endforeach;
+
+    
     
     ?>
-    <p>Some content in menu 2.</p>
   </div>
 </div>
-
+</div>
 </body>
 </html>
