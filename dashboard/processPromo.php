@@ -13,8 +13,11 @@
 	$promoIDQuery = mysqli_query($conn, "SELECT COUNT(DISTINCT promotion_id) as id FROM Promotions");
 	$promoID =  $promoIDQuery->fetch_object()->id;
 
-
-
+	$getCurrPrice = mysqli_query($conn, "SELECT price FROM Items WHERE item_id=".$currItem."");
+	$newPrice = $getCurrPrice*($discount/100);
+	mysqli_query($conn, "UPDATE Items SET price='', City='Hamburg' WHERE CustomerName='Alfreds Futterkiste';");
+	
+	
 	mysqli_query($conn,"INSERT INTO Included(item_id,promotion_id) VALUES($currItem, $promoID)");
 	$_SESSION["InsertSuccess"]  = true;
 	header("location:./salesPromo.php");

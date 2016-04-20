@@ -27,7 +27,7 @@
 	//Get the order id
 	$orderID =  $orderQuery->fetch_object()->id;
 
-	$orderCon = mysqli_query($conn, "INSERT INTO Orders(status, order_date, ship_date) VALUES (0, NOW(), NULL)");
+	$orderCon = mysqli_query($conn, "INSERT INTO Orders(order_id, status, order_date, ship_date) VALUES ($orderID, 0, NOW(), NULL)");
 	foreach ($cartQuery as $row ): 
 		$itemID = $row['item_id'];
 		$itemOrder = mysqli_query($conn, "INSERT INTO ItemOrders(order_id, item_id) VALUES($orderID, $itemID)");

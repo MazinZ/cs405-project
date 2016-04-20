@@ -23,7 +23,7 @@ $email = $_SESSION['currUserEmail'];
 	foreach ($custOrdersQuery as $row ):
 		echo"<p> Item Order Date: ".$row['order_date']."</br></p>";
 		echo"<p> Order Status: ".$row['status']."</br></p>";
-
+		$orderID = $row['order_id'];
 		$itemsOrdersQuery = mysqli_query($conn, "SELECT I.name, I.description 
 									FROM Items I, ItemOrders IO
 									WHERE I.item_id = IO.item_id AND IO.order_id = '".$orderID."'");
