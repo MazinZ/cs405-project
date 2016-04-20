@@ -21,8 +21,13 @@ $email = $_SESSION['currUserEmail'];
 	$custOrdersQuery = mysqli_query($conn, "SELECT O.order_id as order_id, O.order_date as order_date, O.status as status FROM Orders O, CustomerOrders CO WHERE O.order_id = CO.order_id AND CO.email ='".$email."'");
 	echo mysqli_error($conn); 
 	foreach ($custOrdersQuery as $row ):
+		if($row['status'] == 0){
+			$status = "Not Shipped";
+		}else{
+			$status = "Shipped";
+		}
 		echo"<p> Item Order Date: ".$row['order_date']."</br></p>";
-		echo"<p> Order Status: ".$row['status']."</br></p>";
+		echo"<p> Order Status: ".$status."</br></p>";
 		$orderID = $row['order_id'];
 		$itemsOrdersQuery = mysqli_query($conn, "SELECT I.name, I.description 
 									FROM Items I, ItemOrders IO
