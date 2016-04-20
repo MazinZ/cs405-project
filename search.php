@@ -25,7 +25,7 @@
 		foreach ($allcartItemsQuery as $res ):
 			echo '<p>' .$res['name']. '</p>' ;
 			echo '<p>' .$res['description']. '</p>' ;
-			echo '<p>' .$res['price']. '</p>' ;
+			echo '<p> Price: $' .$res['price']. '</p>' ;
 			echo '<p>';
 		endforeach;
 	//echo '</tr>';
