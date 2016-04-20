@@ -12,8 +12,9 @@ session_start();
 
 <body>
 <div class="container">
-	<h1 style="text-align:left;">My Orders</h1>
 	<?php  include_once "../templates/topBar.php"; ?>
+    	<h1 style="text-align:left;">My Orders</h1>
+
  	<?php
     	require("../database.php");
     	include("./displayCart.php");
