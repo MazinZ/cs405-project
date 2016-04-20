@@ -17,7 +17,8 @@
 	$queryArray = mysqli_fetch_array($getCurrPrice);
 	$newPrice =$queryArray['price']- $queryArray['price']*($discount/100);
 	mysqli_query($conn, "UPDATE Items SET price='".$newPrice."' WHERE item_id='".$currItem."';");
-	
+	mysqli_query($conn, "UPDATE Items SET Promoted = '1' WHERE item_id ='".$currItem."'");		
+
 	
 	mysqli_query($conn,"INSERT INTO Included(item_id,promotion_id) VALUES($currItem, $promoID)");
 	$_SESSION["InsertSuccess"]  = true;
