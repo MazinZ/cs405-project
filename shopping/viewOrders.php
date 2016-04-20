@@ -12,21 +12,14 @@ session_start();
 
 <body>
 
-	<h1>My Orders</h1>
+	<h1>Orders</h1>
 	<?php  include_once "../templates/topBar.php"; ?>
  	<?php
     	require("../database.php");
     	include("./displayCart.php");
     ?>
     
-    <?php
-
-    ?>
-    <p>Your order has been submitted.</p>
-
-    <a href="<?php echo HTTP . "viewOrders.php"?>">View My Orders</a>
-
-    
+    <?php displayOrders($conn);?>
     
 </body>
 </html>
