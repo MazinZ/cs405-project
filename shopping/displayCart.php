@@ -9,13 +9,20 @@
 		echo '<tr>';
 			foreach ($cartQuery as $res ):
 				$removeFromCartItem = "removeItemFromCart.php?cart_id=" .$res["cart_id"];
-				echo '<td>' .$res['name']. '</td>' ;
-				echo '<td>' .$res['description']. '</td>' ;
-				echo '<td>' .$res['price']. '</td>' ;
-				echo '<td><a href='.$removeFromCartItem.'>Remove Item</a></td>';
+				echo '<h4>' .$res['name']. 
+				
+				'</h4>' ;
+				echo '<p>' .$res['description'].
+				
+				 '</p>' ;
+				echo '<p> Price: $' .$res['price']. 
+				
+				'</p>' ;
+				echo '<p><a href='.$removeFromCartItem.'>Remove Item</a></p>';
 				echo '<br>';
 			endforeach;
 		echo '</tr>';
+
 	}
 ?>
 

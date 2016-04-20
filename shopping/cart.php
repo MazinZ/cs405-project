@@ -15,6 +15,7 @@ session_start();
     <div class = "container">
 	<?php  include_once "../templates/topBar.php"; ?>
     	<h1 style="text-align:left;">Cart</h1>
+        <br>
 
  	<?php
     	require("../database.php");

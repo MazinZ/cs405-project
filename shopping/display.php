@@ -8,10 +8,14 @@ function displayItems($conn)
 	echo '<tr>';
 		foreach ($allcartItemsQuery as $res ):
 			$addToCartItem = "addItemToCart.php?item_id=" .$res["item_id"];
-			echo '<td>' .$res['name']. '</td>' ;
-			echo '<td>' .$res['description']. '</td>' ;
-			echo '<td>' .$res['price']. '</td>' ;
-			echo '<td><a href='.$addToCartItem.'>Add Item to Cart</a></td>';
+			echo '<h4>' .$res['name']. '
+			</h4>' ;
+			echo '<p>' .$res['description']. '
+			</p>' ;
+			echo '<p> Price: $' .$res['price']. '
+			</p>' ;
+			echo '<p><a href='.$addToCartItem.'>Add Item to Cart</a>
+			</p>';
 			echo '<br>';
 		endforeach;
 	echo '</tr>';

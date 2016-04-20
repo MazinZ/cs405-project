@@ -11,8 +11,11 @@ session_start();
 </head>
 
 <body>
-	<h1>Shopping</h1>
+	<div class="container">
 	<?php  include_once "../templates/topBar.php"; ?>
+    	<h1 style="text-align:left;">Shopping</h1>
+        <br>
+
  	<?php
     	require("../database.php");
     	include("./display.php");
@@ -24,6 +27,6 @@ session_start();
     <?php displayItems($conn);?>
 
     
-    
+    </div>
 </body>
 </html>
