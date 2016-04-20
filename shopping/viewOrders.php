@@ -12,10 +12,10 @@ $email = $_SESSION['currUserEmail'];
 </head>
 
 <body>
-
-	<h1>Orders</h1>
+<div class="container">
 	<?php  include_once "../templates/topBar.php"; ?>
-    
+    	<h1 style="text-align:left;">Orders</h1>
+
     <?php
 
 	$custOrdersQuery = mysqli_query($conn, "SELECT O.order_id as order_id, O.order_date as order_date, O.status as status FROM Orders O, CustomerOrders CO WHERE O.order_id = CO.order_id AND CO.email ='".$email."'");
@@ -26,8 +26,8 @@ $email = $_SESSION['currUserEmail'];
 		}else{
 			$status = "Shipped";
 		}
-		echo"<p> Item Order Date: ".$row['order_date']."</br></p>";
-		echo"<p> Order Status: ".$status."</br></p>";
+		echo"<p> Item Order Date:<strong> ".$row['order_date']." </strong></br></p>";
+		echo"<p> Order Status: <strong> ".$status." </strong> </br></p>";
 		$orderID = $row['order_id'];
 		$itemsOrdersQuery = mysqli_query($conn, "SELECT I.name, I.description 
 									FROM Items I, ItemOrders IO
@@ -36,14 +36,14 @@ $email = $_SESSION['currUserEmail'];
 		
 		foreach ($itemsOrdersQuery as $res ):
         	echo"<p> Item Name: ".$res['name']."</br></p>";
-        	echo"<p> Item Description: ".$res['description']."</br></p>";
+        	echo"<p> &#8195; Item Description: ".$res['description']."</br></p>";
 
 		endforeach;   		
-	
+	echo "<hr>";
 	endforeach;
 	
 
 ?>
-    
+    </div>
 </body>
 </html>

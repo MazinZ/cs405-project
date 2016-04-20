@@ -12,6 +12,9 @@ session_start();
 	<?php  include_once "../templates/includes.php"; ?>
 </head>
 <body>
+<div class="container">
+    <?php  include_once "../templates/topBar.php"; ?>
+	<h1 style="text-align:left;"> Pending Orders</h1>
 	<?php
         if(!isset($_GET['order_id'])){
 
@@ -29,5 +32,6 @@ session_start();
             echo "<a href='$ship_order'>Ship Order</a>";
         endforeach;
 	?>
+    </div>
 </body>
 </html>

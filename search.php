@@ -21,14 +21,14 @@
 	<?php if (isset($_GET['srch-term'])){
 		$allcartItemsQuery = mysqli_query($conn, "SELECT * FROM Items WHERE name = '".$_GET['srch-term']. "'");
 
-	echo '<tr>';
+	//echo '<tr>';
 		foreach ($allcartItemsQuery as $res ):
-			echo '<td>' .$res['name']. '</td>' ;
-			echo '<td>' .$res['description']. '</td>' ;
-			echo '<td>' .$res['price']. '</td>' ;
-			echo '<br>';
+			echo '<p>' .$res['name']. '</p>' ;
+			echo '<p>' .$res['description']. '</p>' ;
+			echo '<p>' .$res['price']. '</p>' ;
+			echo '<p>';
 		endforeach;
-	echo '</tr>';
+	//echo '</tr>';
 	} ?>
     
     </div>

@@ -12,7 +12,7 @@
                 AND O.order_id = CO.order_id";
                 
     	    if ($stmt2 = mysqli_prepare($conn, $orderByID)){
-                echo "</br>----------------Order ID: ".$order_id."--------------- </br>";
+                echo "</br><p style='color:#66b9a3;'>----------------Order ID: ".$order_id."---------------</p> </br>";
                 mysqli_stmt_bind_param($stmt2, 'i', $order_id);
                 mysqli_stmt_execute($stmt2);
                 mysqli_stmt_bind_result($stmt2, $order_ida, $status ,$order_date, $shipping_date, $name, $address);
@@ -47,10 +47,10 @@
                 mysqli_stmt_bind_result($stmt, $item_id, $description ,$name, $price);
                 while(mysqli_stmt_fetch($stmt)){
                 	echo"</br><tr>";
-                		echo"<th> Item Order ID: ".$item_id."</br></th>";
+                		//echo"<th> Item Order ID: ".$item_id."</br></th>";
                 		echo"<th> Item Name: ".$name."</br></th>";
                 		echo"<th> Item Description: ".$description."</br></th>";
-                		echo"<th> Price: ".$price."</br></br></th>";
+                		echo"<th> Price: $".$price."</br></br></th>";
 		            echo"</tr>";
                 }
 
