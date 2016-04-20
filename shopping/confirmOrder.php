@@ -11,8 +11,8 @@ session_start();
 </head>
 
 <body>
-
-	<h1>My Orders</h1>
+<div class="container">
+	<h1 style="text-align:left;">My Orders</h1>
 	<?php  include_once "../templates/topBar.php"; ?>
  	<?php
     	require("../database.php");
@@ -27,6 +27,6 @@ session_start();
     <a href="<?php echo HTTP . "./shopping/viewOrders.php"?>">View My Orders</a>
 
     
-    
+    </div>
 </body>
 </html>
