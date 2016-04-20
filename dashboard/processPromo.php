@@ -14,8 +14,9 @@
 	$promoID =  $promoIDQuery->fetch_object()->id;
 
 	$getCurrPrice = mysqli_query($conn, "SELECT price FROM Items WHERE item_id=".$currItem."");
-	$newPrice = $getCurrPrice*($discount/100);
-	mysqli_query($conn, "UPDATE Items SET price='', City='Hamburg' WHERE CustomerName='Alfreds Futterkiste';");
+	$queryArray = mysqli_fetch_array($getCurrPrice);
+	$newPrice =$queryArray['price']- $queryArray['price']*($discount/100);
+	mysqli_query($conn, "UPDATE Items SET price='".$newPrice."' WHERE item_id='".$currItem."';");
 	
 	
 	mysqli_query($conn,"INSERT INTO Included(item_id,promotion_id) VALUES($currItem, $promoID)");

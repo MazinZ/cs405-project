@@ -20,13 +20,13 @@
 <body>
 <div class="container">
 
-<h1> Sales Statistics </h1>
     <?php  include_once "../templates/topBar.php"; 
 
     
     ?>
 
 
+<h1 style="text-align:left;"> Sales Statistics </h1>
 
 
     
@@ -37,7 +37,7 @@
   <li><a data-toggle="tab" href="#menu2" >Year</a></li>
 </ul>
 
-<div class="tab-content">
+<div class="tab-content" style="background-color:#fff; padding:28px;">
   <div id="home" class="tab-pane fade in active">
     <h3>Past Week</h3>
     <?php  include_once "../templates/topBar.php"; 

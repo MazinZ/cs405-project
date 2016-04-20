@@ -23,7 +23,7 @@
 		<div class="alert alert-success">
   			<strong>Success!</strong> New promotion added.
 		</div>
-	<?php } ?>
+	<?php unset($_SESSION["InsertSuccess"]);} ?>
     
                 <div class = "centerBox animated fadeIn" style="height:250px;"> 
 <h1> Add Promotion </h1>

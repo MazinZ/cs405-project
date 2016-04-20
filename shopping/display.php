@@ -14,6 +14,7 @@ function displayItems($conn)
 			</p>' ;
 			echo '<p> Price: $' .$res['price']. '
 			</p>' ;
+			if($res['Promoted']){ echo '<p style="font-weight:bold;"> On Sale! </p>';}
 			echo '<p><a href='.$addToCartItem.'>Add Item to Cart</a>
 			</p>';
 			echo '<br>';
