@@ -73,7 +73,7 @@
       
   </ul>
   <div class="col-sm-3 col-md-3 pull-right">
-		<form class="navbar-form" role="search" method="GET" action="./search.php">
+		<form class="navbar-form" role="search" method="GET" action="<?php echo HTTP . 'search.php'?>">
 		<div class="input-group">
 			<input type="text" style="margin-top:0px;" class="form-control" placeholder="Search" name="srch-term" id="srch-term">
 			<div class="input-group-btn">

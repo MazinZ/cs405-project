@@ -13,9 +13,11 @@
 </head>
 
 <body>
-<h1> Results </h1>
-<h2> <?php if (isset($_GET['srch-term'])) echo  $_GET['srch-term']?></h2>
+<div class="container"> 
     <?php  include_once "./templates/topBar.php";  ?>
+    <h1 style="text-align:left"> Results </h1>
+<h2> <?php if (isset($_GET['srch-term'])) echo  $_GET['srch-term']?></h2>
+
 	<?php if (isset($_GET['srch-term'])){
 		$allcartItemsQuery = mysqli_query($conn, "SELECT * FROM Items WHERE name = '".$_GET['srch-term']. "'");
 
@@ -28,5 +30,7 @@
 		endforeach;
 	echo '</tr>';
 	} ?>
+    
+    </div>
 </body>
 </html>
