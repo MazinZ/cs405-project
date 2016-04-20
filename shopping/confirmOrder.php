@@ -24,7 +24,7 @@ session_start();
     ?>
     <p>Your order has been submitted.</p>
 
-    <a href="<?php echo HTTP . "viewOrders.php"?>">View My Orders</a>
+    <a href="<?php echo HTTP . "./shopping/viewOrders.php"?>">View My Orders</a>
 
     
     
